@@ -53,21 +53,11 @@ body {
   align-items: center;
   padding: 10px 5px;
 }
-/* .field {
-  width: 150px;
-  height: 80px;
-} */
-/* .floor {
-  justify-content: center;
-  align-items: center;
-}
-.grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-} */
+
 .right {
   margin-right: 10px;
 }
+
 .section2 {
   background-color: #fff;
   display: grid;
