@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+    <title>Dashboard</title>
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="navbar-left">
+        <span class="material-symbols-outlined"> menu </span>
+        <p>Energyviss/Live Dashboard</p>
+      </div>
+      <div class="navbar-right">
+        <div><span class="material-symbols-outlined"> refresh </span></div>
+        <div><span class="material-symbols-outlined"> alarm </span></div>
+        <div><span class="material-symbols-outlined"> person </span></div>
+      </div>
+    </div>
+    <div class="section">
+      <div class="section1">
+        <div class="floor">
+          <form>
+            <label class="right">FLOOR:</label>
+            <mat-form-field appearance="fill">
+              <mat-label>Floor</mat-label>
+              <mat-select name="floor">
+                <mat-option *ngFor="let floor of floors" [value]="floor.value">
+                  {{ floor.viewValue }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </form>
+        </div>
+        <div class="section1-section">
+          <form>
+            <label class="right">SECTION:</label>
+            <mat-form-field appearance="fill">
+              <mat-label>Section</mat-label>
+              <mat-select name="section1-section">
+                <mat-option *ngFor="let sec of sections" [value]="sec.value">
+                  {{ sec.viewValue }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </form>
+        </div>
+        <div class="view">
+          <form>
+            <label class="right">VLEW:</label>
+            <mat-form-field appearance="fill">
+              <mat-label>View</mat-label>
+              <mat-select name="view">
+                <mat-option *ngFor="let v of view" [value]="v.value">
+                  {{ v.viewValue }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </form>
+        </div>
+        <div class="meter">
+          <form>
+            <label class="right">METER:</label>
+            <mat-form-field appearance="fill">
+              <mat-label>Meter</mat-label>
+              <mat-select name="meter">
+                <mat-option *ngFor="let m of meter" [value]="m.value">
+                  {{ m.viewValue }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </form>
+        </div>
+      </div>
+      <div class="section2">
+        <div class="energy">
+          <h4>ENERGY: <span class="text">156.610 kWh</span></h4>
+        </div>
+        <div class="energy">
+          <h4>LAST UPDATED: <span class="text">22/06/2021 12:07 PM</span></h4>
+        </div>
+        <div class="energy">
+          <h4>
+            NEXT HOUR PREDICTED ENERGY: <span class="text">157,393.05 kWh</span>
+          </h4>
+        </div>
+      </div>
+      <div class="section3">
+        <h3>KEY PARAMETERS</h3>
+        <div class="section3-gauge">
+          <div class="gauge-change">
+            <ngx-gauge
+              [size]="100"
+              [type]="'semi'"
+              [label]="gaugeLabel[0]"
+              [value]="gaugeValue[0]"
+            >
+            </ngx-gauge>
+          </div>
+          <div class="gauge-change">
+            <ngx-gauge
+              [size]="100"
+              [type]="'semi'"
+              [label]="gaugeLabel[1]"
+              [value]="gaugeValue[1]"
+            >
+            </ngx-gauge>
+          </div>
+          <div class="gauge-change">
+            <ngx-gauge
+              [size]="100"
+              [type]="'semi'"
+              [label]="gaugeLabel[2]"
+              [value]="gaugeValue[2]"
+            >
+            </ngx-gauge>
+          </div>
+          <div class="gauge-change">
+            <ngx-gauge
+              [size]="100"
+              [type]="'semi'"
+              [label]="gaugeLabel[3]"
+              [value]="gaugeValue[3]"
+            >
+            </ngx-gauge>
+          </div>
+          <div class="gauge-change">
+            <ngx-gauge
+              [size]="100"
+              [type]="'semi'"
+              [label]="gaugeLabel[4]"
+              [value]="gaugeValue[4]"
+            >
+            </ngx-gauge>
+          </div>
+        </div>
+      </div>
+      <div class="section4">
+        <app-line-chart></app-line-chart>
+        <div class="line"></div>
+        <app-line-chart-right></app-line-chart-right>
+      </div>
+    </div>
+    <div class="icon-message">
+      <span class="material-symbols-outlined"> sms </span>
+    </div>
+  </body>
+</html>
